@@ -27,8 +27,8 @@ int main()
     bool lessEqual{4<=9};
     bool greaterEqual{4>=9};
 
-    //Infinite loop
-    while(true){
+    //WindowShouldClose() = if we've hit the X or ESCAPE, true. Otherwise false
+    while(WindowShouldClose() == false){
 
         //Start drawing
         BeginDrawing();
