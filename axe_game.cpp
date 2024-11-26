@@ -10,8 +10,8 @@ by Eren
 int main()
 {
     //Creating a popup window
-    int width = 1200;
-    int height = 800;
+    int width{1200};
+    int height{800};
     InitWindow(width, height, "AXE GAME");
 
     //Data Types and Variables
@@ -27,6 +27,13 @@ int main()
     bool lessEqual{4<=9};
     bool greaterEqual{4>=9};
 
+    //Circle coordinates
+    int circle_x{100};
+    int circle_y{200};
+
+    //Setting the refreshng speed of window
+    SetTargetFPS(60);
+
     //WindowShouldClose() = if we've hit the X or ESCAPE, true. Otherwise false
     while(WindowShouldClose() == false){
 
@@ -37,7 +44,25 @@ int main()
         ClearBackground(RED);
 
         //Draw a circle
-        DrawCircle(300, 400, 50, BLUE);
+        DrawCircle(circle_x, circle_y, 50, BLUE);
+
+        //Move codes
+        if(IsKeyDown(KEY_D) && circle_x <= width)
+        {
+            circle_x+=10;
+        }
+         if(IsKeyDown(KEY_A) && circle_x >= 0)
+        {
+            circle_x-=10;
+        }
+        if(IsKeyDown(KEY_W) && circle_y >= 0)
+        {
+            circle_y-=10;
+        }
+         if(IsKeyDown(KEY_S) && circle_y <= height)
+        {
+            circle_y+=10;
+        }
 
         //End drawing
         EndDrawing();
