@@ -35,6 +35,8 @@ int main()
     int axe_x{width/2};
     int axe_y{0};
 
+    int direction{10};
+
     //Setting the refreshng speed of window
     SetTargetFPS(60);
 
@@ -52,7 +54,13 @@ int main()
 
         //Draw a rectangle
         DrawRectangle(axe_x, axe_y, 50, 50, PURPLE);
-        axe_y+=5;
+
+        //Move the Axe
+        axe_y+=direction;
+        if(axe_y>height || axe_y < 0)    
+        {
+            direction = -direction;
+        }
 
         //Move codes
         if(IsKeyDown(KEY_D) && circle_x <= width)
