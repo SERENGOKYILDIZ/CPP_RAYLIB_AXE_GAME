@@ -36,6 +36,9 @@ int main()
         //Draw white in the background
         ClearBackground(RED);
 
+        //Draw a circle
+        DrawCircle(300, 400, 50, BLUE);
+
         //End drawing
         EndDrawing();
     }
