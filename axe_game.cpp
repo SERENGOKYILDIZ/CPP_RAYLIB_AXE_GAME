@@ -27,4 +27,17 @@ int main()
     bool lessEqual{4<=9};
     bool greaterEqual{4>=9};
 
+    //Infinite loop
+    while(true){
+
+        //Start drawing
+        BeginDrawing();
+
+        //Draw white in the background
+        ClearBackground(RED);
+
+        //End drawing
+        EndDrawing();
+    }
+
 }
